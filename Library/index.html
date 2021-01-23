@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Managent</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>NY Library Records</h1>
+        <!-- form to input book info -->
+        <!-- div1 -->
+        <form id="input_form" autocomplete="off">
+            <div class="name_div">
+                <label for="bname">Name</label>
+                <input type="text" id="bname" placeholder="Book Name">
+            </div>
+            <!-- div2 -->
+            <div class="author_div">
+                <label for="bauthor">Author</label>
+                <input type="text" id="bauthor" placeholder="Author Name">
+            </div>
+            <!-- div3 -->
+            <div class="type_div">
+                <label>Type</label>
+                <div class="type">
+                    <div class="types">
+                        <input type="radio" name="type" id="type1" class="btype" value="Education">
+                        <label for="type1">Education</label>
+                    </div>
+                    <div class="types">
+                        <input type="radio" name="type" id="type2" class="btype" value="Biographies">
+                        <label for="type2">Biographies</label>
+                    </div>
+                    <div class="types">
+                        <input type="radio" name="type" id="type3" class="btype" value="Fiction">
+                        <label for="type3">Fiction</label>
+                    </div>                                          
+                    <div class="types">
+                        <input type="radio" name="type" id="type4" class="btype" value="Others">
+                        <label for="type4">Others</label>
+                    </div>                                          
+                </div>
+            </div>
+            <button id="btn">Add Book</button>
+        </form>
+        <!-- form to input book info ends-->
+    </div>
+    <!-- TABLE -->
+    <div class="table_div">
+        <table>
+            <thead>
+                <tr>
+                    <td>Sr No</td>
+                    <td>Name</td>
+                    <td>Author</td>
+                    <td>Type</td>
+                    <td>Delete</td>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+        <div class="no-record"></div>
+    </div>
+    <!-- TABLE ENDS -->
+</body>
+<script src="./index.js"></script>
+</html>

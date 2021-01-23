@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 62.5%;
+  font-family: "Roboto";
+}
+/* nav */
+nav {
+  background: rgba(0, 0, 0, 0.9);
+  /* background: red; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+nav h1 {
+  font-size: 1.5rem;
+  color: #ecf0f1;
+  cursor: default;
+  position: relative;
+}
+nav h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: #f1c40f;
+  transition: 0.2s;
+}
+nav h1:hover::after {
+  width: 100%;
+}
+nav #search {
+  outline: none;
+  padding: 0.3rem;
+  width: 25%;
+  font-family: "Poppins";
+}
+/* container */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)),
+    url("./images/BgClock.jpg") no-repeat center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container h1 {
+  margin-top: 0.8rem;
+  font-size: 1.4rem;
+  color: #f1c40f;
+  text-shadow: 1px 1px 1px black;
+  text-align: center;
+}
+.container .addNoteDiv {
+  width: 90%;
+  max-width: 90%;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  position: relative;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow: 0 0 10px 5px rgba(247, 245, 245, 0.548);
+  backdrop-filter: blur(5px);
+}
+.addNoteDiv .dateTime {
+  display: flex;
+  justify-content: space-around;
+}
+.addNoteDiv .dateTime input {
+  max-width: 40%;
+}
+#text,
+#title,
+#date,
+#time {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.5rem 0.1rem;
+  outline: none;
+  border: 1px solid black;
+  font-family: "Poppins";
+  font-size: 1rem;
+  resize: none;
+}
+#text:focus,
+#title:focus,
+#data:focus,
+#time:focus {
+  box-shadow: 0 0 4px 1px #fed330;
+}
+.addNoteDiv .addBtn {
+  background: #f1c40f;
+  outline: none;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  font-weight: 400;
+  transition: 0.2s;
+  cursor: pointer;
+  position: absolute;
+  bottom: -10px;
+  right: -15px;
+}
+.addNoteDiv .addBtn:hover {
+  background: #f39c12;
+  color: #2c3e50;
+}
+/* displaying notes */
+.notesDiv {
+  width: 90%;
+  max-height: 70vh;
+  margin-top: 1rem;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+.notesDiv .note {
+  width: 30%;
+  height: 25vh;
+  padding: 1rem 0.5rem;
+  margin-top: 1.5rem;
+  margin-right: 1.2rem;
+  border: 1px solid #fd9644;
+  backdrop-filter: blur(5px);
+  color: #ecf0f1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+.note .title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.note .date {
+  margin-bottom: 0.5rem;
+}
+.note .date p {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.note .desc p {
+  font-size: 0.9rem;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+}
+.note .delete {
+  background: #f1c40f;
+  outline: none;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  font-weight: 400;
+  transition: 0.2s;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+}
+.note .delete:hover {
+  background: transparent;
+  color: #ea2027;
+}
+/* scrollbars */
+.note::-webkit-scrollbar,
+.notesDiv::-webkit-scrollbar {
+  width: 3px;
+}
+/* Track */
+.note::-webkit-scrollbar-track,
+.notesDiv::-webkit-scrollbar-track {
+  background: #fa8231;
+}
+
+/* Handle */
+.note::-webkit-scrollbar-thumb,
+.notesDiv::-webkit-scrollbar-thumb {
+  background: #fed330;
+  border-radius: 30px;
+}
+
+/* responsive */
+@media screen and (max-width: 850px) {
+  nav #search {
+    width: 45%;
+  }
+  .notesDiv .note {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .notesDiv {
+    width: 95%;
+    justify-content: center;
+  }
+  .notesDiv .note {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 450px) {
+  nav {
+    flex-direction: column;
+  }
+  nav #search {
+    margin-top: 0.5rem;
+    width: 80%;
+  }
+}
+@media screen and (max-width: 380px) {
+  .notesDiv .note {
+    width: 95%;
+  }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css -->
+    <link rel="stylesheet" href="./styles/css.css" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <!-- icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>Remind Me</title>
+  </head>
+  <!-- body -->
+  <body>
+    <nav>
+      <h1>Remind Me</h1>
+      <input
+        type="text"
+        placeholder="Search By Title OR Description"
+        id="search"
+        oninput="search()"
+      />
+    </nav>
+    <div class="container">
+      <h1>Start Taking Your Notes</h1>
+      <!-- adding notes-->
+      <div class="addNoteDiv">
+        <input type="text" id="title" placeholder="Title" />
+        <div class="dateTime">
+          <input type="date" id="date" placeholder="Date To Remind" />
+          <input type="time" id="time" placeholder="Time to Remind" />
+        </div>
+        <textarea
+          name="text"
+          id="text"
+          placeholder="Note Description"
+        ></textarea>
+        <button class="addBtn"><i class="fas fa-plus"></i></button>
+      </div>
+      <!-- displaying notes-->
+      <h1>Your Notes Will Appear Here</h1>
+      <div class="notesDiv"></div>
+    </div>
+    <!-- js -->
+    <script src="./js.js"></script>
+  </body>
+</html>

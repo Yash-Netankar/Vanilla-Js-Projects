@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins";
+    box-sizing: border-box;
+}
+body{
+    font-size: 62.5%;
+    width: 100%;
+    min-height: 100vh;
+    background: #ecf0f1;
+}
+h1{
+    text-align: left;
+    animation: line 2s linear infinite;
+}
+.container{
+    width: 80%;
+    border: 1px solid #777;
+    padding: 1rem;
+    margin: .5rem auto;
+}
+#input_form div{
+display: flex;
+align-items: center;
+margin-top: 1rem;
+}
+#input_form div label{
+    width: 30%;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+#input_form div input{
+    width: 100%;
+    outline: none;
+    padding: .3rem;
+}
+#input_form .type_div{
+    display: flex;
+}
+.type_div .type{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.type_div .type .types{
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+}
+.type_div .type .types input{
+    width: 5% !important;
+}
+#input_form #btn{
+    outline: none;
+    border: 1px solid #333;
+    padding: .3rem 1rem;
+    background: royalblue;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    transition: .2s;
+}
+#input_form #btn:hover{
+    background: #2c3e50;
+    color: #27ae60;
+}
+
+/* TABLE */
+.table_div{
+    width: 100vw;
+    overflow: scroll;
+    height: 40vh;
+}
+.table_div::-webkit-scrollbar{
+    display: none;
+}
+table{
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    margin: .5rem auto;
+    border: 1px solid #2f3542;
+    border-collapse: collapse;
+}
+table thead tr, td{border: 1px solid black;text-align: center;}
+table thead tr td{
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    background: #2f3542;
+    color: #ecf0f1;
+    padding: 4px;
+}
+table tbody tr:nth-child(even){
+    background: #ced6e0;
+}
+table tbody tr:nth-child(odd){
+    background: #dfe4ea;
+}
+table tbody tr{
+    border: 1px solid black;
+}
+table tbody tr td{
+    font-size: .9rem;
+    padding: 3px;
+}
+table tbody tr td .del_icon{
+    color:#ff4757;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 1.5rem;
+    transition: .3s;
+    border-radius: 50%;
+    padding: .3rem .5rem;
+}
+table tbody tr td .del_icon:hover{
+    background: pink;
+    color:#EA2027
+}
+
+@media screen and (max-width:590px){
+    .container{
+        width: 95%;
+    }
+}
+@media screen and (max-width:430px){
+    #input_form div label{
+        width: 40%;
+    }
+    .type_div .type .types input{
+        width: 10% !important;
+    }
+}

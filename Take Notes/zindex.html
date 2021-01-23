@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practise</title>
+  </head>
+  <body>
+    <h1>This is to practise Js OOPS.</h1>
+  </body>
+  <script>
+    // OBJECTS
+    /*function Car(
+      cname,
+      cspeed,
+      cprice,
+      myCar = "",
+      myCarSpeed = 0,
+      myCarPrice = 0
+    ) {
+      this.name = cname;
+      this.speed = cspeed;
+      this.price = cprice;
+
+      this.myCar = myCar;
+      this.myCarSpeed = myCarSpeed;
+      this.myCarPrice = myCarPrice;
+
+      this.run = () => {
+        console.log(`The Car ${this.name} will Run at ${this.speed}-kmph.`);
+        console.log(`So Buy It Now Only At $${this.price} only.`);
+      };
+      //   compare
+      this.compare = () => {
+        if (this.speed <= this.myCarSpeed || this.price <= this.myCarPrice) {
+          console.log(
+            `${this.name} is Slower than ${this.myCar} by ${
+              this.myCarSpeed - this.speed
+            }`
+          );
+          console.log(
+            `${this.name} is also cheaper than ${this.myCar} by ${
+              this.myCarPrice - this.price
+            }`
+          );
+        } else {
+          console.log(
+            `${this.name} is great in all aspects than ${this.myCar}`
+          );
+        }
+      };
+    }
+     let cname = prompt("Enter Car Name To Compare");
+     let cspeed = prompt(`Enter Speed of ${cname} Car`);
+     let cprice = prompt(`Enter Price of ${cname} Car`);
+     objects
+     let obj = new Car("BMW", 180, 7000000, cname, cspeed, cprice);
+     console.log(obj.run());
+     console.log(obj.compare());*/
+
+    /*************
+    CLASSES
+    ****************/
+    class Car {
+      constructor(givenName,givenSpeed,givenPrice,
+        myCar = "",myCarSpeed = 0,myCarPrice = 0) 
+        {
+        this.name = givenName;
+        this.speed = givenSpeed;
+        this.price = givenPrice;
+
+        this.myCar = myCar;
+        this.myCarSpeed = myCarSpeed;
+        this.myCarPrice = myCarPrice;
+      }
+      // run car
+      run = () => {
+        console.log(`The Car ${this.name} will Run at ${this.speed} km/h.`);
+        console.log(`So Buy It Now Only At $${this.price} only.`);
+      };
+      // compare
+      compare = () => {
+        if (this.speed <= this.myCarSpeed || this.price <= this.myCarPrice) {
+          console.log(
+            `${this.name} is Slower than ${this.myCar} by ${this.myCarSpeed - this.speed}kmph`
+          );
+          console.log(
+            `${this.name} is also cheaper than ${this.myCar} by ${this.myCarPrice - this.price}`
+          );
+        } else {
+          console.log(
+            `${this.name} is great in all aspects than ${this.myCar}`
+          );
+        }
+      };
+    }
+    // variables
+    let cname = prompt("Enter Car Name To Compare");
+    let cspeed = prompt(`Enter Speed of ${cname} Car`);
+    let cprice = prompt(`Enter Price of ${cname} Car`);
+    // OBJECT
+    let obj = new Car("BMW", 220, 5000000, cname, cspeed, cprice);
+    obj.run();
+    obj.compare();
+  </script>
+</html>

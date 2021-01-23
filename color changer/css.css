@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* header */
+.header{
+    width: 100%;
+    height: 7vh;
+    background-color: rgb(248, 244, 244);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.61);
+    border-radius: 3px;
+    display: flex;
+}
+.header .heading{
+    width: 80%;
+}
+.heading >h1{
+    margin: .5em 0 0 1em;
+    font-family: monospace;
+    letter-spacing: 4px;
+    font-weight: 500;
+    color: rgb(34, 119, 199);
+}
+/* links inside header */
+.links{
+    width: 20%;
+    text-align: center;
+}
+.links ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+
+}
+.links ul li{
+    font-size: 1.1rem;
+    margin-top: .6em;
+    letter-spacing: 3px;
+}
+.links ul li a{
+   color: rgb(38, 39, 38);
+   font-weight: bold;
+}
+.first{
+    border-bottom: 1.5px solid black;
+}
+/* main-body */
+main{
+    width: 100%;
+    height: 93vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+main .content{
+   background-color: rgb(17, 16, 16);
+   padding: 1em 5em;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: center;
+   border-radius: 7px;
+}
+main .content h1{
+    color: white;
+    font-weight: 500;
+}
+main .content p{
+    margin-top: .3em;
+    color: rgb(24, 224, 224);
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+/* button inside main */
+.button{
+    width: 15%;
+    margin-top: 2em;
+}
+.button a{
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-family: sans-serif;
+    padding: .3em .5em;
+    color: black;
+    letter-spacing: 3px;
+    border: 2px solid black;
+}
+.button a:hover{
+    background-color: black;
+    color: whitesmoke;
+    border: 2px solid rgb(81, 211, 243);
+    transition: .6s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
