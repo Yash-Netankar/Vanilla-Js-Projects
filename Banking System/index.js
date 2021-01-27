@@ -80,7 +80,9 @@ class Account {
     }
 }
 
-// Banking operations
+/********************
+Banking operations
+**********************/
 class Operations {
     // Withdraw Operation
     static Withdraw = () => {
@@ -158,7 +160,47 @@ class Operations {
     static MiniStatement = () => {
 
     }
-
+    // Change Password
+    static ChangePass = () => {
+        this.showModel("Enter New Password", "Change");
+        let arr = [];
+        let account = JSON.parse(localStorage.getItem("Account"));
+        let form = document.getElementById("modal_form");
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let passw = account[0].pass;
+            let enter_pass = document.getElementById("pin").value;
+            let change_pass = document.getElementById("msg").value;
+            if (change_pass != enter_pass) {
+                if (enter_pass == passw) {
+                    // object destructring & updating pass
+                    let arr2 = { ...account[0], pass: change_pass };
+                    arr.push(arr2);
+                    localStorage.setItem("Account", JSON.stringify(arr));
+                    document.querySelector(".atm").classList.remove("blur");
+                    document.querySelector(".modal").classList.remove("show");
+                    let inboxmsg = `Your Password Has Been Changed`;
+                    showMsgInbox("Can't Update!!", inboxmsg, true);
+                }
+                else {
+                    error_sound.play();
+                    alert("Invalid OLD Password!!");
+                }
+            }
+            else {
+                error_sound.play();
+                alert("Both Passwords Are Same!!\nCan't Change");
+            }
+        })
+    }
+    //Delete Account
+    static DeleteAcc = () => {
+        let yes = confirm("Are You Sure You Want To Delete This Account");
+        if (yes) {
+            localStorage.clear();
+            location.reload();
+        }
+    }
 
     // showing model
     static showModel = (msg, btnText = "Operate") => {
@@ -227,7 +269,9 @@ let showMsgInbox = (result, inboxMsg, bool) => {
 }
 let msg = "No Transaction done this time";
 let bal = JSON.parse(localStorage.getItem("Account"));
-showMsgInbox(JSON.parse(bal[0].balance), msg, false);
+if (bal !== null) {
+    showMsgInbox(JSON.parse(bal[0].balance), msg, false);
+}
 
 
 //Performing operations
@@ -242,4 +286,12 @@ document.getElementById("deposit").addEventListener("click", () => {
 // 3]. Mini-Statement
 document.getElementById("mini").addEventListener("click", () => {
     Operations.MiniStatement();
+});
+// 4]. Change Password
+document.getElementById("changePass").addEventListener("click", () => {
+    Operations.ChangePass();
+});
+// 5]. Delete Account
+document.getElementById("delete").addEventListener("click", () => {
+    Operations.DeleteAcc();
 });
