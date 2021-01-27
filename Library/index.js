@@ -11,6 +11,15 @@ class Book {
         this.author = author;
         this.type = type;
     }
+    static NotFound = () => {
+        let notFound = document.createElement("h1");
+        let no_record = document.querySelector(".no-record");
+        let text = document.createTextNode("No Records Found");
+        notFound.appendChild(text);
+        notFound.setAttribute("style", "text-align:center");
+        notFound.setAttribute("id", "not_found");
+        no_record.appendChild(notFound);
+    }
 }
 
 // delete book function
@@ -24,24 +33,28 @@ const deleteB = (id) => {
     }
     arr.splice(id, 1);
     localStorage.setItem("Book", JSON.stringify(arr));
-    Display.display();
-    location.reload();
-
+    if (arr.length == 0) {
+        Book.NotFound();
+        document.getElementById("tableBody").innerHTML = "";
+    }
+    else {
+        Display.display();
+    }
 }
 
 // display book class
 class Display {
     // display
     static display = () => {
-        let table = document.getElementsByTagName("table")[0];
-        let body = document.getElementById("tableBody");
-        let Book = JSON.parse(localStorage.getItem("Book"));
-        if (Book == null || Book == "" || Book.length == 0) {
+        let tbody = document.getElementById("tableBody");
+        tbody.innerHTML = '';
+        let book = JSON.parse(localStorage.getItem("Book"));
+        if (book == null || book == "" || book.length == 0 || book == []) {
             localStorage.clear();
         }
         let html = "";
         try {
-            Book.forEach((item, index) => {
+            book.forEach((item, index) => {
                 html += `
                 <tr>
                     <td>${index + 1}</td>
@@ -49,24 +62,17 @@ class Display {
                     <td>${item.author}</td>
                     <td>${item.type}</td>
                     <td>
-                    <i class="fa fa-trash-o del_icon" id=${index} onclick="deleteB(this.id)"></i>
+                        <i class="fa fa-trash-o del_icon" id=${index} onclick="deleteB(this.id)"></i>
                     </td>
-                </tr>
-                `;
+                </tr>`;
             });
-            body.insertAdjacentHTML("afterend", html);
+            tbody.insertAdjacentHTML("beforeend", html);
             if (document.getElementById("not_found")) {
                 document.getElementById("not_found").remove();
             }
         }
         catch {
-            let notFound = document.createElement("h1");
-            let no_record = document.querySelector(".no-record");
-            let text = document.createTextNode("No Records Found");
-            notFound.appendChild(text);
-            notFound.setAttribute("style", "text-align:center");
-            notFound.setAttribute("id", "not_found");
-            no_record.appendChild(notFound);
+            Book.NotFound();
         }
     }
     // validation
