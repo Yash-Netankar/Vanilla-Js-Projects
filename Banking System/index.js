@@ -17,6 +17,18 @@ let card_no_db = document.querySelector(".atm_card .face .card_no");
 let valid_db = document.querySelector(".atm_card .face .validity .date");
 let name_db = document.querySelector(".atm_card .face .name");
 
+//mini-statement attributes
+let MiniStat = document.querySelector(".mini_s");
+let close_btn_mini = document.querySelector(".mini_s .close_btn");
+let mini_bname = document.querySelector(".mini_s .bank_info .bank_name");
+let mini_name = document.querySelector(".mini_s .bank_info .name");
+let mini_acc_no = document.querySelector(".mini_s .bank_info .acc_no");
+let mini_bal = document.querySelector(".mini_s .banking_details .balance .bal");
+let mini_type = document.querySelector(".mini_s .banking_details .acc_type .type");
+let mini_created_on = document.querySelector(".mini_s .banking_details .created .created_on");
+let mini_todayD = document.querySelector(".mini_s .banking_details .date .todayD");
+
+
 // message box (Inbox)
 let msg_box = document.querySelector(".msg_box");
 let close_btn = document.querySelector(".close_btn");
@@ -24,6 +36,27 @@ let messages = document.querySelector(".messages");
 
 // bank names of available banks
 let bank_names = ["State Bank Of India", "Punjab National Bank", "Maharashtra Bank", "Axis Bank", "ICICI", "Cosmos Bank", "HDFC", "PM Jan Dhan Yojna"];
+
+
+
+// showing messages like inbox
+let showMsgInbox = (result, inboxMsg, bool) => {
+    let d = new Date();
+    messages.innerText = `${inboxMsg} on ${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`;
+    let left_balance = document.createElement("p");
+    left_balance.innerText = `Remaining Balance: ${result}`;
+    messages.appendChild(left_balance);
+    if (bool) inbox.play();
+    (!bool && close_btn.addEventListener("click", () => messages.classList.toggle("show")));
+}
+let Load = () => {
+    let msg = "No Transaction done this time";
+    let bal = JSON.parse(localStorage.getItem("Account"));
+    if (bal !== null) {
+        showMsgInbox(JSON.parse(bal[0].balance), msg, false);
+    }
+}
+
 
 
 // Account Class
@@ -76,6 +109,9 @@ class Account {
             card_no_db.innerText = item.acc_no;
             valid_db.innerText = `${date.getMonth()}/${year.substr(2,)}`;
         });
+        //displaying message box
+        msg_box.style.display = "inline-block";
+        Load();
 
     }
 }
@@ -158,7 +194,27 @@ class Operations {
     }
     //MiniStatement
     static MiniStatement = () => {
-
+        let data = JSON.parse(localStorage.getItem("Account"));
+        let date = new Date().getDate();
+        let month = new Date().getMonth() + 1;
+        let year = new Date().getFullYear();
+        if (data !== null && data !== "" && data !== []) {
+            MiniStat.classList.add("animate__animated", "animate__flipInY");
+            MiniStat.style.display = "block";
+            mini_name.innerText = data[0].name;
+            mini_acc_no.innerText = data[0].acc_no;
+            mini_bname.innerText = data[0].bank_name;
+            mini_bal.innerText = data[0].balance;
+            mini_type.innerText = data[0].type;
+            mini_created_on.innerText = `${data[0].date[0]}/${data[0].date[1]}`;
+            mini_todayD.innerText = `${date}/${month}/${year}`;
+            let ib_msg = "Mini Statement Given To You";
+            showMsgInbox(data[0].balance, ib_msg, true);
+        }
+        close_btn_mini.addEventListener("click", () => {
+            MiniStat.classList.remove("animate__animated", "animate__flipInY");
+            MiniStat.style.display = "none";
+        });
     }
     // Change Password
     static ChangePass = () => {
@@ -180,6 +236,7 @@ class Operations {
                     document.querySelector(".atm").classList.remove("blur");
                     document.querySelector(".modal").classList.remove("show");
                     let inboxmsg = `Your Password Has Been Changed`;
+                    location.reload();
                     showMsgInbox("Can't Update!!", inboxmsg, true);
                 }
                 else {
@@ -256,22 +313,6 @@ account_form.addEventListener("submit", (e) => {
 });
 
 
-
-// showing messages like inbox
-let showMsgInbox = (result, inboxMsg, bool) => {
-    let d = new Date();
-    messages.innerText = `${inboxMsg} on ${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`;
-    let left_balance = document.createElement("p");
-    left_balance.innerText = `Remaining Balance: ${result}`;
-    messages.appendChild(left_balance);
-    if (bool) inbox.play();
-    (!bool && close_btn.addEventListener("click", () => messages.classList.toggle("show")));
-}
-let msg = "No Transaction done this time";
-let bal = JSON.parse(localStorage.getItem("Account"));
-if (bal !== null) {
-    showMsgInbox(JSON.parse(bal[0].balance), msg, false);
-}
 
 
 //Performing operations

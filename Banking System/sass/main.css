@@ -551,7 +551,7 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  display: inline-block;
+  display: none;
   width: 250px;
   height: auto;
 }
@@ -604,5 +604,90 @@ body {
   font-size: 1rem;
   visibility: visible;
   pointer-events: all;
+}
+
+.mini_s {
+  width: 50%;
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #ffffff;
+  border: 2px solid #333;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.562);
+          box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.562);
+  padding: .5rem 1rem;
+  display: none;
+}
+
+.mini_s .close_btn {
+  font-size: 3rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: right;
+}
+
+.mini_s .bank_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1rem;
+  border: 1px solid black;
+}
+
+.mini_s .banking_details {
+  margin-top: 1rem;
+}
+
+.mini_s .banking_details .inner_div {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid #777;
+}
+
+.mini_s .footer {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+@media screen and (max-width: 525px) {
+  .mini_s {
+    width: 75%;
+    left: 10%;
+  }
+}
+
+@media screen and (max-width: 385px) {
+  .mini_s {
+    width: 95%;
+    left: 2%;
+  }
 }
 /*# sourceMappingURL=main.css.map */
