@@ -1,0 +1,46 @@
+@media screen and (max-width:600px){
+    .logo>h1{
+        font-size: 5rem;
+    }
+    .DrinkWater .form{
+        width: 60%;
+        margin-top: 8em;
+    }
+    form{
+        width: 100%;
+        padding: 1.5em;
+    }
+    label{
+        margin-top: 1em;
+        font-size: 1.1rem;
+    }
+    input{
+        width: 90%;
+        padding: .1em;
+    }
+    ::placeholder{
+        font-size: .8rem;
+    }
+    a{
+        font-size: .9rem;
+    }
+}
+@media screen and (max-width:450px){
+    .logo>h1{
+        font-size: 4rem;
+    }
+    .DrinkWater .form{
+        width: 80%;
+        margin-top: 8em;
+    }
+    form{
+        width: 100%;
+        padding: 1em;
+    }
+    input{
+        width: 100%;
+    }
+    a{
+        font-size: 1rem;
+    }
+}

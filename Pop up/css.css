@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+.container{
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.904),rgba(0, 0, 0, 0.322)), url("./images/back.webp") no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    font-family: cursive;
+}
+.popup-style{
+    filter: blur(1.5px);
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    background-color: rgba(204, 32, 32, 0.274);
+}
+nav ul{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+main a{
+    padding: .4em .9em;
+    background-color: royalblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+main a:hover{
+    background-color: rgb(45, 98, 255);
+}
+
+
+/* pop up  */
+.popup{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    transform: scale(0);
+    transition: .5s ease-in-out;
+}
+.show{
+    visibility: visible;
+    transform: scale(1);
+}
+.popup .popup-content{
+    background-color: rgba(255, 255, 255, 0.997);
+    color: black;
+    width: 50%;
+    padding: 2em 4em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.close-div{
+    display: flex;
+    justify-content: flex-end;
+    margin-top:-1rem ;
+}
+.close-div #close{
+    padding: .2em .4em;
+    font-size: 1.9rem;
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+}
+.popup-content form{
+    padding: 1em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+form label{
+    margin-top: 1em;
+}
+form input{
+    padding: .4em;
+}
+form input[type=submit]{
+    margin: 0 auto;
+    margin-top: 2em;
+    width: 10vw;
+    font-size: .9rem;
+    font-family: sans-serif;
+    outline: none;
+    background: royalblue;
+    color: #fff;
+    border: 1px solid black;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+form input[type=submit]:hover{
+    background-color: rgb(33, 86, 243);
+    transition: .3s;
+}
+ ::placeholder{
+    text-align: center;
+}

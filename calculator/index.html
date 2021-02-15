@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css.css">
+    </head>
+    <body>
+        <h1 class="heading">CALCULATOR</h1>
+       <form name="form">
+           <div  id="container1">
+
+            <input type="text" name="input" id="operation" placeholder="Input data here">
+
+            <button type="button" onclick="form.input.value += '1' " value="1">1</button>
+            <button type="button" onclick="form.input.value += '2' " value="2">2</button>
+            <button type="button" onclick="form.input.value += '3' " value="3">3</button>
+
+            <button type="button" onclick="form.input.value += '4' " value="4">4</button>
+            <button type="button" onclick="form.input.value += '5' " value="5">5</button>
+            <button type="button" onclick="form.input.value += '6' " value="6">6</button>
+
+            <button type="button" onclick="form.input.value += '7' " value="7">7</button>
+            <button type="button" onclick="form.input.value += '8' " value="8">8</button>
+            <button type="button" onclick="form.input.value += '9' " value="9">9</button>
+        <!-- OPERATORS  -->
+            <button type="button" onclick="form.input.value += '+' " value="+">+</button>
+            <button type="button" onclick="form.input.value += '-' " value="-">-</button>
+            <button type="button" onclick="form.input.value += '*' " value="*">*</button>
+            <button type="button" onclick="form.input.value += '/' " value="/">/</button>
+
+            <button type="button" onclick="form.input.value += '0' " value="0">0</button>
+        <!-- BUTTONS -->
+            <button type="button" onclick="form.input.value = eval(form.input.value) ; fun();" value="=">=</button>
+
+            <button type="button" onclick="form.input.value = '' ; fun2(); " value="Clear All" id="clear">Clear All</button>
+            
+        </div>
+        </form>
+        
+        <div id="desc">
+            <p id="para"></p>
+        </div>
+        
+        <script src="js.js"></script>
+    </body>
+</html>

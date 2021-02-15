@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="calci.css">
+    <title>Death calculator</title>
+</head>
+<body>
+  <div class="container">
+      <div class="cal">
+          <!-- scary text -->
+          <div class="scary-text">
+              <span>D</span>
+              <span>e</span>
+              <span>a</span>
+              <span>t</span>
+              <span>h</span>
+              <span>&nbsp;</span>
+              <span>C</span>
+              <span>a</span>
+              <span>l</span>
+              <span>c</span>
+              <span>u</span>
+              <span>l</span>
+              <span>a</span>
+              <span>t</span>
+              <span>o</span>
+              <span>r</span>
+          </div>
+          <form>
+              <label for="Name" > Name</label>
+              <input type="text" id="Name" placeholder="Name">
+              <br>
+              <br>
+              <br>
+              <label for="DOB">Birth Year</label>
+              <input type="text" id="DOB" placeholder="ex- 2001,1999">
+              <br>
+              <br>
+              <!-- Gender -->
+              <p>Enter your Gender</p>
+              <label for="male">M</label>
+              <input type="radio" id="male" name="gender">
+              <label for="female">F</label>
+              <input type="radio" id="female" name="gender">
+              <br>
+              <br>
+              <label for="Height">Height</label>
+              <input type="number" id="Height" placeholder="Height CM's">
+              <br>
+              <br>
+              <br>
+              <label for="Weight">Weight</label>
+              <input type="number" id="Weight" placeholder="Weight in kg's">
+              <br>
+              <br>
+              <!-- smoking -->
+              <p>Do you Smoke?</p>
+              <label for="YesSmoke">Yes</label>
+              <input type="radio" id="YesSmoke" name="smoke">
+              <label for="nSmoke">No</label>
+              <input type="radio" id="nSmoke" name="smoke">
+              <br>
+              <br>
+              <!-- drink -->
+              <p>Do you Drink</p>
+              <label for="drink-Y">Yes</label>
+              <input type="radio" id="drink-Y" name="drink">
+              <label for="drink-N">No</label>
+              <input type="radio" id="drink-N" name="drink">
+              <br>
+              <br>
+              <!-- how often -->
+              <p>How Often you do Exercise</p>
+              <select name="exercise" id="exercise">
+                  <option value="Daily">Daily</option>
+                  <option value="Weekly">Weekly</option>
+                  <option value="Monthly">Monthly</option>
+              </select>
+              <br>
+              <br>
+              <!-- location -->
+              <p>Where do you live?</p>
+              <label for="city">City</label>
+              <input type="radio" id="city" name="location">
+              <label for="village">Village</label>
+              <input type="radio" id="village" name="location">
+              <br>
+              <br>
+              <!-- relationship status -->
+              <p>Relation Status</p>
+              <label for="single">Single</label>
+              <input type="radio" id="single" name="Relation">
+              <label for="Married">Married</label>
+              <input type="radio" id="Married" name="Relation">
+              <label for="commited">Commited</label>
+              <input type="radio" id="commited" name="Relation">
+              <br>
+              <br>
+              <!-- behaviour -->
+              <p>Are you Introvert or Extrovert</p>
+              <label for="introvert">Introvert</label>
+              <input type="radio" id="introvert" name="behaviour">
+              <label for="extrovert">Extrovert</label>
+              <input type="radio" id="extrovert" name="behaviour">
+              <br>
+              <br>
+              <br>
+              <a href="#" class="btn" onclick="Submit()">Submit</a>
+
+          </form>
+      </div>
+  </div>
+
+
+<script src="calculator.js"></script>
+
+</body>
+</html>
