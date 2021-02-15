@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.container h1{
+    text-align: center;
+    padding: .3em .5em;
+    font-size: 2.5rem;
+    font-family: cursive;
+    text-shadow: 2px 2px 5px rgb(236, 233, 9);
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.315);
+    z-index: 1;
+    animation: angle 3s ease-in-out 1,
+    animate-text 1.5s ease-in-out infinite;
+}
+@keyframes angle{
+    10%,20%{
+        transform: scale(.5);
+    }
+}
+@keyframes animate-text{
+    0%,10%{
+        text-shadow: 2px 2px 5px cyan,
+                     2px 2px 5px cyan;
+    }
+}
+.video-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.486);
+}
+
+/* styling where games are located */
+.games-div{
+    width: 60%;
+    height: 70vh;
+    margin-top: 2em;
+    padding: .3em .7em;
+    background-color: rgba(0, 0, 0, 0.322);
+    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 10px;
+}
+.games-div .game{
+    width: 50%;
+    height: auto;
+    padding: .3em .7em;
+    margin:  auto;
+    text-align: center;
+    margin-top: .5em;
+}
+
+
+/* style image here */
+.games-div .game-1 .img-div img{
+    width: 100%;
+    height: 25vh;
+}
+.game-2 .img-div img{
+    width: 100%;
+    height: 25vh;
+}
+.game-3 .img-div img{
+    width: 100%;
+    height: 25vh;
+}
+.game .img-div img{
+    box-shadow: 2px 4px 6px red;
+}
+
+
+/* styling buttons */
+.games-div .game .btn-div{
+    margin-top: 2em;
+    display: inline-block;
+}
+.games-div .game .btn{
+    text-decoration: none;
+    padding: .3em .6em;
+    margin: .2em 0px;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family:sans-serif;
+    color: #47f1f1;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border: 2px solid #47f1f1;
+    border-radius:3px;
+    background-color: rgba(0, 0, 0, 0.397);
+    transition: .4s;
+}
+.games-div .game .btn:hover{
+    color: #255784;
+    font-weight: bold;
+    background-color: #2196f3;
+    box-shadow: 0 0px 10px #2196f3, 0 0px 30px #2196f3, 0 0px 60px #2196f3;
+    transition-delay: .1s;
+    text-shadow: 0 0 5px #2196f3,0 0 5px #2196f3;
+}
+/* styling scroolbar */
+::-webkit-scrollbar{
+    width: .5rem;
+}
+::-webkit-scrollbar-track{
+    border: 7px solid black;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(45deg, #06dee1, #79ff6c);
+    border-radius: 2px;
+}
